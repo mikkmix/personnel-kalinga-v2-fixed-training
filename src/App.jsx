@@ -33,6 +33,8 @@ import Lesson5 from "@/pages/Online/Lessons/Lesson5";
 import Lesson6 from "@/pages/Online/Lessons/Lesson6";
 import Lesson7 from "@/pages/Online/Lessons/Lesson7";
 
+// 🧠 Chat Page
+import ChatPage from "@/pages/ChatPage";
 
 // 🧠 Context
 import { TriageProvider } from "@/context/TriageProvider";
@@ -82,6 +84,12 @@ function App() {
                 <Module2 />
               </PrivateRoute>
             }
+          />
+
+          {/* 🧠 NEW CHAT ROUTE */}
+          <Route
+            path="/chat"
+            element={<PrivateRoute><ChatPage /></PrivateRoute>}
           />
 
           {/* 🔶 MODULE MAIN PAGE (dynamic) */}

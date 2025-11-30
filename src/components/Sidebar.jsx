@@ -9,8 +9,8 @@ import {
   BookOpen,
   Settings,
   Menu,
-  MessageSquare,   // ✅ NEW ICON
-} from "lucide-react"; 
+  MessageSquare, // NEW ICON
+} from "lucide-react";
 import "../styles/sidebar.css";
 
 const Sidebar = () => {
@@ -52,11 +52,11 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        {/* ✅ NEW CHAT PAGE MENU ITEM */}
+        {/* NEW CHAT PAGE MENU ITEM */}
         <li className={isActive("/chat") ? "active" : ""}>
           <Link to="/chat">
             <MessageSquare className="icon" />
-            <span className="link-text">Messages</span>
+            <span className="link-text">Message</span>
           </Link>
         </li>
 
@@ -83,6 +83,7 @@ const Sidebar = () => {
                 <span className="link-text">Modules</span>
               </Link>
             </li>
+
             <li className={isActive("/certifications") ? "active" : ""}>
               <Link to="/certifications">
                 <span className="link-text">Certifications</span>

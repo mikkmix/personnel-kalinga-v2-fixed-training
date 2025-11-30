@@ -1,0 +1,159 @@
+/* ============================
+   MAIN CHAT CARD (MATCH OTHER CARDS)
+============================= */
+.chat-shortcut-preview {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.25s ease;
+  width: 100%;
+  height: 93.5%;
+}
+
+.chat-shortcut-preview:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================
+   HEADER (iOS Style)
+============================= */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  margin-top: 9px;
+  margin-left: 7px;
+}
+
+.chat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #052e16, #16a348);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.28);
+}
+
+.chat-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.chat-subtitle {
+  margin: 0;
+  margin-top: 3px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ============================
+   INNER PREVIEW (Clean Container)
+============================= */
+.chat-preview-wrapper {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #edf0f3;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ============================
+   LEFT MENU
+============================= */
+/* ============================
+   LEFT MENU (Fixed)
+============================= */
+.chat-left-panel {
+  width: 160px;            /* Stable width */
+  flex-shrink: 0;          /* Prevent collapsing */
+  background: #f9fafb;
+  border-right: 1px solid #ececf0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.left-item {
+  background: #ffffff;
+  border: 1px solid #f1f2f4;
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.left-item:hover {
+  background: #f3f4f6;
+}
+
+/* ============================
+   RIGHT CHAT LIST (Fixed)
+============================= */
+.chat-list {
+  flex: 1;
+  min-width: 0;            /* IMPORTANT — prevents collapsing */
+  background: #ffffff;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.chat-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: #f8f9fb;
+  padding: 12px 16px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  border: 1px solid #ececf0;
+  transition: 0.2s ease;
+}
+
+.chat-item:hover {
+  background: #f1f2f6;
+  transform: translateX(4px);
+}
+
+/* ============================
+   BADGES
+============================= */
+.badge {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.badge.urgent {
+  background: #ffeced;
+  color: #c00014;
+}
+
+.badge.routine {
+  background: #e8f3ff;
+  color: #0b61ff;
+}
+
+.badge.unread {
+  background: #ebe4ff;
+  color: #5a21c4;
+}
