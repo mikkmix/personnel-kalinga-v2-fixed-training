@@ -1,0 +1,265 @@
+/* ==========================================================================
+   GLOBAL VARIABLES
+========================================================================== */
+:root {
+  --clr-primary: #0b472d;
+  --clr-primary-light: #114d32;
+  --clr-accent: #16a34a;
+
+  --clr-text: #374151;
+  --clr-text-light: #4b5563;
+  --clr-muted: #9aa3a0;
+
+  --clr-border: #e5e7eb;
+  --clr-bg-light: #f3f4f6;
+  --clr-bg-white: #ffffff;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   MAIN LAYOUT
+========================================================================== */
+.lesson-container {
+  display: flex;
+  gap: 24px;
+  padding: 20px 32px;
+}
+
+.lesson-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.lesson-sidebar {
+  width: 300px;
+  min-width: 280px;
+  background: var(--clr-bg-white);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+/* ==========================================================================
+   BREADCRUMBS
+========================================================================== */
+.lesson-breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--clr-text-light);
+}
+
+.lesson-breadcrumbs a {
+  text-decoration: none;
+  color: var(--clr-primary-light);
+  font-weight: 500;
+}
+
+.lesson-breadcrumbs .mx {
+  margin: 0 4px;
+}
+
+/* ==========================================================================
+   TITLES
+========================================================================== */
+.lesson-title {
+  font-size: 24px;
+  color: var(--clr-primary);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.lesson-subtitle {
+  font-size: 18px;
+  color: var(--clr-primary-light);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   PROGRESS BAR
+========================================================================== */
+.progress-wrapper {
+  background: var(--clr-bg-light);
+  border-radius: var(--radius-md);
+  height: 8px;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--clr-accent);
+  border-radius: var(--radius-md);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: var(--clr-primary);
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   VIDEO PLAYER (unchanged per your request)
+========================================================================== */
+.video-wrapper {
+  background: #000;
+  border-radius: var(--radius-md);
+  border: 1px solid #d1d5db;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   TRANSCRIPT
+========================================================================== */
+.transcript-section {
+  background: var(--clr-bg-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.transcript-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--clr-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transcript-section p {
+  margin-top: 12px;
+  color: var(--clr-text);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* ==========================================================================
+   COMPLETION & BUTTONS
+========================================================================== */
+.completion-wrapper {
+  margin-top: 16px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--clr-border);
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.btn-success {
+  background: var(--clr-accent);
+  color: white;
+  border: none;
+}
+
+.btn-disabled {
+  background: var(--clr-border);
+  color: #6b7280;
+  border: none;
+  cursor: not-allowed;
+}
+
+.btn-light {
+  background: var(--clr-bg-light);
+  color: var(--clr-primary);
+  border: none;
+}
+
+/* ==========================================================================
+   BOTTOM CONTROLS
+========================================================================== */
+.lesson-controls {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.jump-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.jump-select {
+  width: 70%;
+  max-width: 450px;
+  padding: 10px 12px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: white;
+}
+
+/* ==========================================================================
+   SIDEBAR
+========================================================================== */
+.lesson-sidebar h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: 12px;
+}
+
+.lesson-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.lesson-sidebar li {
+  padding: 10px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  transition: 0.15s ease;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.lesson-sidebar li.active {
+  background: rgba(16, 163, 76, 0.08);
+  font-weight: 600;
+  border-left: 3px solid var(--clr-accent);
+  padding-left: 12px;
+}
+
+.lesson-sidebar li.done {
+  color: var(--clr-primary);
+}
+
+.lesson-sidebar .module-status {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--clr-text-light);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+========================================================================== */
+@media (max-width: 900px) {
+  .lesson-container {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .lesson-sidebar {
+    width: 100%;
+    position: static;
+  }
+}

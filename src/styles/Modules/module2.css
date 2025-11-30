@@ -1,0 +1,259 @@
+/* ==========================================================================
+   GLOBAL VARIABLES
+========================================================================== */
+:root {
+  --clr-primary: #0b472d;
+  --clr-primary-light: #114d32;
+  --clr-accent: #16a34a;
+
+  --clr-text: #374151;
+  --clr-text-light: #4b5563;
+  --clr-muted: #9aa3a0;
+
+  --clr-border: #e5e7eb;
+  --clr-bg-light: #f3f4f6;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================================================
+   LAYOUT
+========================================================================== */
+.lesson-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.lesson-page {
+  flex: 1;
+}
+
+.lesson-activity-list {
+  width: 320px;
+  position: sticky;
+  top: 96px;
+}
+
+/* ==========================================================================
+   BREADCRUMBS
+========================================================================== */
+.lesson-breadcrumbs {
+  font-size: 13px;
+  color: var(--clr-text-light);
+  margin-bottom: 8px;
+}
+
+.lesson-breadcrumbs a {
+  color: var(--clr-primary-light);
+  text-decoration: none;
+}
+
+.lesson-breadcrumbs span {
+  margin: 0 6px;
+  color: var(--clr-muted);
+}
+
+/* ==========================================================================
+   HEADERS
+========================================================================== */
+.lesson-header {
+  margin-bottom: 10px;
+}
+
+.lesson-course-title {
+  color: var(--clr-primary);
+  font-size: 20px;
+  margin: 0;
+}
+
+.lesson-activity-title {
+  margin: 6px 0 16px;
+  color: var(--clr-primary-light);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   MEDIA PLAYER
+========================================================================== */
+.video-wrapper {
+  background: #000;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(3, 80, 46, 0.04);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-player {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+
+/* ==========================================================================
+   TRANSCRIPT
+========================================================================== */
+.transcript-section {
+  width: 100%;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.transcript-section h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  margin-bottom: 12px;
+
+  font-size: 18px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.transcript-section p {
+  white-space: pre-line;
+  line-height: 1.6;
+  color: var(--clr-text);
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   CONTROLS
+========================================================================== */
+.lesson-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.jump-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.jump-select {
+  width: 60%;
+  max-width: 520px;
+
+  padding: 10px 12px;
+  border: 1px solid #d0d7d2;
+  background: #fff;
+
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   BUTTONS
+========================================================================== */
+.btn {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-success {
+  background: var(--clr-accent);
+  color: white;
+  border: none;
+}
+
+.btn-light {
+  background: var(--clr-bg-light);
+  color: var(--clr-primary);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--clr-primary-light);
+  color: var(--clr-primary-light);
+}
+
+.btn-disabled {
+  background: var(--clr-border);
+  color: #6b7280;
+  border: none;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   SIDEBAR ACTIVITY LIST
+========================================================================== */
+.lesson-activity-list h4 {
+  margin: 0 0 10px;
+  color: var(--clr-primary);
+}
+
+.lesson-activity-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lesson-activity-list li {
+  padding: 8px 6px;
+  border-left: 3px solid transparent;
+  transition: 0.2s;
+}
+
+.lesson-activity-list li.active {
+  border-left-color: var(--clr-primary);
+  background: rgba(6, 74, 38, 0.05);
+}
+
+.lesson-activity-list li.done a {
+  color: var(--clr-primary);
+}
+
+.lesson-activity-list .check {
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.lesson-activity-list a {
+  color: #143f2b;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   CENTERED MESSAGES
+========================================================================== */
+.lesson-center {
+  padding: 48px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+========================================================================== */
+@media (max-width: 900px) {
+  .lesson-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .lesson-activity-list {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

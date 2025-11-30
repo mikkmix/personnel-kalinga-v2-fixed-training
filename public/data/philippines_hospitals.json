@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Philippine General Hospital",
+    "province": "Metro Manila",
+    "position": [14.5737, 120.9831],
+    "level": "Tertiary"
+  },
+  {
+    "name": "Another Hospital",
+    "province": "Pampanga",
+    "position": [15.0476, 120.6921]
+  },
+  ...
+]

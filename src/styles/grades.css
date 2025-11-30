@@ -1,0 +1,203 @@
+/* src/styles/grades.css */
+
+.grades-container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+.grades-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.grades-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.grades-subtitle {
+  color: #4b5563;
+  margin: 8px 0 18px;
+}
+
+.grades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.grade-card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grade-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 8px;
+}
+
+.course-title {
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.meta-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.badge {
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.badge-unlocked {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid rgba(6,95,70,0.08);
+}
+
+.badge-locked {
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid rgba(71,85,105,0.06);
+}
+
+.badge-passed {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid rgba(6,95,70,0.08);
+}
+
+.badge-notpassed {
+  background: #fff7ed;
+  color: #92400e;
+  border: 1px solid rgba(146,64,14,0.06);
+}
+
+.grades-list {
+  font-size: 0.95rem;
+  color: #374151;
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.value {
+  font-weight: 700;
+}
+
+.overall-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.overall-value.green { color: #047857; }
+.overall-value.orange { color: #b45309; }
+.overall-value.red { color: #b91c1c; }
+.overall-value.muted { color: #6b7280; }
+
+.progress-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 140px;
+}
+
+.progress {
+  width: 120px;
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  transition: width 500ms ease;
+}
+
+.progress-fill.green {
+  background: linear-gradient(90deg, #34d399, #059669);
+}
+
+.progress-fill.orange {
+  background: linear-gradient(90deg, #fbbf24, #f97316);
+}
+
+.progress-fill.red {
+  background: linear-gradient(90deg, #fb7185, #ef4444);
+}
+
+.progress-fill.muted {
+  background: #cbd5e1;
+}
+
+.progress-number {
+  min-width: 36px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #111827;
+  text-align: right;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg,#10b981,#059669);
+  color: #fff;
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px dashed #cbd5e1;
+}
+
+.btn-light {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 600px) {
+  .progress { width: 90px; }
+  .progress-number { min-width: 28px; font-size: 0.85rem; }
+}

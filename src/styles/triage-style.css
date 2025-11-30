@@ -1,0 +1,340 @@
+/* ===== TRIAGE CARD (MODERN DASHBOARD LOOK) ===== */
+.card.triage-card {
+  background: #ffffff;
+  padding: 1.8rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.card.triage-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #0f172a;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.8rem;
+}
+
+/* ===== TABLE STYLES ===== */
+.triage-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.triage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.triage-table th,
+.triage-table td {
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.triage-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #334155;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+.triage-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.triage-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: 0.2s ease;
+}
+
+/* ===== TRIAGE LEVEL COLORS ===== */
+.low { color: #16a34a; font-weight: 600; }
+.medium { color: #f59e0b; font-weight: 600; }
+.high { color: #dc2626; font-weight: 600; }
+.very-high { color: #b91c1c; font-weight: 600; }
+.critical { color: #7e22ce; font-weight: 700; }
+
+/* ===== LEGEND ===== */
+.triage-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: #475569;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.legend-dot.low { background: #16a34a; }
+.legend-dot.medium { background: #f59e0b; }
+.legend-dot.high { background: #dc2626; }
+.legend-dot.very-high { background: #b91c1c; }
+.legend-dot.critical { background: #7e22ce; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(17, 24, 39, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 950px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  animation: slideUp 0.35s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.modal-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+  color: #0f172a;
+}
+
+.modal-subtext {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-table th,
+.modal-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.modal-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* color-coded cells */
+.modal-table td.low { background: #dcfce7; color: #166534; }
+.modal-table td.medium { background: #fef3c7; color: #92400e; }
+.modal-table td.high { background: #fee2e2; color: #991b1b; }
+.modal-table td.veryHigh { background: #fecaca; color: #7f1d1d; }
+.modal-table td.critical { background: #ede9fe; color: #5b21b6; }
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn {
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.6rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.close-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+/* === FIX HOSPITAL NAME VISIBILITY === */
+.triage-table td:first-child {
+  text-align: left !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: #0f172a !important; /* dark slate */
+}
+
+.triage-table td:first-child .subtext {
+  display: block;
+  font-size: 0.78rem;
+  margin-top: 2px;
+  color: #64748b; /* slate gray */
+}
+
+
+/* ===== RECOMMENDATIONS CARD ===== */
+.recommendations-card {
+  margin-top: 1.8rem;
+  background: #f9fafb;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.4rem 1.8rem;
+  transition: all 0.25s ease;
+}
+
+.recommendations-card:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.9rem;
+}
+
+.recommendations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.6rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.recommendation-item:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.recommendation-icon {
+  color: #db2777;
+  font-size: 1.1rem;
+  margin-right: 0.8rem;
+}
+
+.recommendation-text {
+  flex: 1;
+  color: #334155;
+  font-size: 0.88rem;
+}
+
+.priority-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  text-transform: capitalize;
+}
+
+.priority-badge.low { background: #dcfce7; color: #166534; }
+.priority-badge.medium { background: #fef3c7; color: #92400e; }
+.priority-badge.high { background: #fee2e2; color: #991b1b; }
+.priority-badge.veryHigh { background: #fecaca; color: #7f1d1d; }
+.priority-badge.critical { background: #ede9fe; color: #5b21b6; }
+
+/* 🩺 Priority Specialist Badges */
+.doctor-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* 🎨 Color Themes by Doctor Type */
+.doctor-badge.cardiologist { background-color: #c0392b; }
+.doctor-badge.neurologist { background-color: #8e44ad; }
+.doctor-badge.infectious-disease-specialist { background-color: #16a085; }
+.doctor-badge.pulmonologist { background-color: #2980b9; }
+.doctor-badge.emergency-medicine { background-color: #e67e22; }
+.doctor-badge.internal-medicine { background-color: #27ae60; }
+.doctor-badge.general-practitioner { background-color: #7f8c8d; }
+
+/* 🌟 Glow Animations Matching Badge Color */
+@keyframes pulseGlowRed {
+  0%, 100% { box-shadow: 0 0 0 rgba(192,57,43,0); }
+  50% { box-shadow: 0 0 12px rgba(192,57,43,0.7); }
+}
+@keyframes pulseGlowPurple {
+  0%, 100% { box-shadow: 0 0 0 rgba(142,68,173,0); }
+  50% { box-shadow: 0 0 12px rgba(142,68,173,0.7); }
+}
+@keyframes pulseGlowTeal {
+  0%, 100% { box-shadow: 0 0 0 rgba(22,160,133,0); }
+  50% { box-shadow: 0 0 12px rgba(22,160,133,0.7); }
+}
+@keyframes pulseGlowBlue {
+  0%, 100% { box-shadow: 0 0 0 rgba(41,128,185,0); }
+  50% { box-shadow: 0 0 12px rgba(41,128,185,0.7); }
+}
+@keyframes pulseGlowOrange {
+  0%, 100% { box-shadow: 0 0 0 rgba(230,126,34,0); }
+  50% { box-shadow: 0 0 12px rgba(230,126,34,0.7); }
+}
+@keyframes pulseGlowGreen {
+  0%, 100% { box-shadow: 0 0 0 rgba(39,174,96,0); }
+  50% { box-shadow: 0 0 12px rgba(39,174,96,0.7); }
+}
+@keyframes pulseGlowGray {
+  0%, 100% { box-shadow: 0 0 0 rgba(127,140,141,0); }
+  50% { box-shadow: 0 0 12px rgba(127,140,141,0.7); }
+}
+
+/* 💫 Trigger Animations When Updated */
+.doctor-badge.updated.cardiologist { animation: pulseGlowRed 1.5s ease-in-out; }
+.doctor-badge.updated.neurologist { animation: pulseGlowPurple 1.5s ease-in-out; }
+.doctor-badge.updated.infectious-disease-specialist { animation: pulseGlowTeal 1.5s ease-in-out; }
+.doctor-badge.updated.pulmonologist { animation: pulseGlowBlue 1.5s ease-in-out; }
+.doctor-badge.updated.emergency-medicine { animation: pulseGlowOrange 1.5s ease-in-out; }
+.doctor-badge.updated.internal-medicine { animation: pulseGlowGreen 1.5s ease-in-out; }
+.doctor-badge.updated.general-practitioner { animation: pulseGlowGray 1.5s ease-in-out; }
